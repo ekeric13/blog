@@ -1,0 +1,184 @@
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>console.log("what's up with the console?")</title>
+    <meta name="description" content="">
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="../favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=bc24e8ab80">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic%7COpen+Sans:700,400">
+
+    <link rel="canonical" href="http://localhost:2368/console-logwhats-up-with-the-console/">
+    
+    <meta property="og:site_name" content="standing on the shoulders of giants">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="console.log(&quot;what's up with the console?&quot;)">
+    <meta property="og:description" content="Almost all intro to javascript tutorials have you starting off with console.log(&quot;something&quot;).  Eloquent Javascript, Codecademy, Codeschool, they usually begin with you writing a function that console.log's something. And why not? Console.log helps the user see output,...">
+    <meta property="og:url" content="http://localhost:2368/console-logwhats-up-with-the-console/">
+    <meta property="article:published_time" content="2014-12-19T05:34:45.576Z">
+    <meta property="article:modified_time" content="2015-01-04T02:49:24.780Z">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="console.log(&quot;what's up with the console?&quot;)">
+    <meta name="twitter:description" content="Almost all intro to javascript tutorials have you starting off with console.log(&quot;something&quot;).  Eloquent Javascript, Codecademy, Codeschool, they usually begin with you writing a function that console.log's something. And why not? Console.log helps the user see output,...">
+    <meta name="twitter:url" content="http://localhost:2368/console-logwhats-up-with-the-console/">
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "standing on the shoulders of giants",
+    "author": {
+        "@type": "Person",
+        "name": "Eric Kennedy",
+        "url": "http://localhost:2368/author/eric",
+        "sameAs": null
+    },
+    "headline": "console.log(&quot;what&#x27;s up with the console?&quot;)",
+    "url": "http://localhost:2368/console-logwhats-up-with-the-console/",
+    "datePublished": "2014-12-19T05:34:45.576Z",
+    "dateModified": "2015-01-04T02:49:24.780Z",
+    "description": "Almost all intro to javascript tutorials have you starting off with console.log(&quot;something&quot;).  Eloquent Javascript, Codecademy, Codeschool, they usually begin with you writing a function that console.log&#x27;s something. And why not? Console.log helps the user see output,..."
+}
+    </script>
+
+    <meta name="generator" content="Ghost 0.5">
+    <link rel="alternate" type="application/rss+xml" title="standing on the shoulders of giants" href="http://localhost:2368/rss/">
+</head>
+<body class="post-template">
+
+    
+
+
+<header class="main-header post-head no-cover">
+    <nav class="main-nav  clearfix">
+        <a class="back-button icon-arrow-left" href="http://localhost:2368">Home</a>
+        <a class="subscribe-button icon-feed" href="http://localhost:2368/rss/">Subscribe</a>
+    </nav>
+</header>
+
+<main class="content" role="main">
+
+    <article class="post">
+
+        <header class="post-header">
+            <h1 class="post-title">console.log("what's up with the console?")</h1>
+            <section class="post-meta">
+                <time class="post-date" datetime="2014-12-18">18 December 2014</time> 
+            </section>
+        </header>
+
+        <section class="post-content">
+            <p>Almost all intro to javascript tutorials have you starting off with console.log("something"). <br>
+<img src="../content/images/2015/01/Screen-Shot-2015-01-03-at-5-45-00-PM.png" alt="From Eloquent Javascript Ch. 1">
+Eloquent Javascript, Codecademy, Codeschool, they usually begin with you writing a function that console.log's something. And why not? Console.log helps the user see output, which is essential for grasping the inner workings of a new concept. </p>
+
+<p>The problem I have is that tutorials explain what functions are, explain what primitives are, explain what data structures are, explain every part of the script except console.log. Eventually console.log just becomes this magical thing that outputs numbers and the beginner programmers use without thinking about what it is actually doing.</p>
+
+<p>"console" is actually an object that gives you access to the browser and let's you interact with it. Just like window is a global object, console is also a global object. <a href="https://developer.mozilla.org/en-US/docs/Web/API/Console">Here is the console api reference from mozilla</a> and <a href="https://developer.chrome.com/devtools/docs/console-api">here is the one from google</a></p>
+
+<p>Go ahead and <strong>open your console browser by pressing command+option+j</strong> if you are using a mac. Now type in console. If you look under <em>_ proto _</em> of the console and then the <em>_ proto _</em> of the console base you can see all the methods console has. <br>
+<img src="../content/images/2015/01/Screen-Shot-2015-01-03-at-5-40-15-PM.png" alt="console methods"></p>
+
+<p>The three main uses of the browser console are: <br>
+1. A place to get diagnostic information about the website by having the app console.log information. This is great for debugging. <br>
+2. <a href="https://developer.chrome.com/devtools/docs/commandline-api">A command line prompt to interact with the DOM.</a> This is great for doing front-end work as you do not have to go back between your app and your browser to see if certain jquery selections work. <br>
+3. A general sandbox to play with javascript. Rather than having to run a whole script to test if a function works you can run it in the console.</p>
+
+<p>Here are some of the most popular console methods: <br>
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/Console.log">console.log</a> - outputs a message to the browser console
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/Console.dir">console.dir</a> - A more powerful console.log. log prints out a tree with information about its contents some of the time, the other time it prints out a string of its contents. dir always gives a tree with all the information about its contents. 
+<img src="../content/images/2015/01/Screen-Shot-2015-01-03-at-5-54-35-PM.png" alt="log vs dir">
+The downside is that dir prints out a json like object as opposed to a html like object. <br>
+<img src="../content/images/2015/01/Screen-Shot-2015-01-03-at-5-57-27-PM.png" alt="for dom use log">
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/Console.assert">console.assert</a> - Test assertions in your code that print to the console if they fail. Great for testing. console.assert(test, "error message").
+<img src="../content/images/2015/01/Screen-Shot-2015-01-03-at-6-03-06-PM.png" alt="$$() selects all of selector">
+console.clear() - Clears console. <br>
+console.time and console.timeEnd - These act as a timer to keep track on how long it takes something to run. Put console.time("message") in front of a function and then after the function put console.timeEnd("message"). It prints out in the console how long it took your script to run what was inbetween the timers. <br>
+<img src="../content/images/2015/01/Screen-Shot-2015-01-03-at-6-05-39-PM.png" alt="">
+console.trace - prints a stack trace from where in the script console.trace() is called.</p>
+
+<p>To see examples of console methods and to get a better understanding I feel that google has the best documentation. <a href="https://developer.chrome.com/devtools/docs/console-api">Here is a link</a></p>
+
+<p>Here are somee shortcuts for interacting with the dom: <br>
+$() - Like jquery put a css selector within $(".class") to select it.
+<img src="../content/images/2015/01/Screen-Shot-2015-01-03-at-6-16-23-PM.png" alt="">
+Sometimes google's command line api will fail to load. <br>
+<img src="../content/images/2015/01/Screen-Shot-2015-01-03-at-6-19-37-PM.png" alt="">
+If this happens you have to use the old school way of selecting things with document.querySelector. <br>
+<img src="../content/images/2015/01/Screen-Shot-2015-01-03-at-6-19-03-PM.png" alt="">
+$$() - Selects all elements with the css selector. It would just look like $$(".class")
+<img src="../content/images/2015/01/Screen-Shot-2015-01-03-at-6-07-31-PM.png" alt="">
+$0 - If you click an html tag in the elements tab, and then put $0 in your console, $0 will select the latest image you clicked.
+<img src="../content/images/2015/01/Screen-Shot-2015-01-03-at-6-28-23-PM.png" alt="">
+<img src="../content/images/2015/01/Screen-Shot-2015-01-03-at-6-27-46-PM.png" alt="">
+<strong>console.log trick</strong> - When you console.log an object in your code, right click it in the console, select store as global object, and now you can reference it in your console without having to console.log it. Great for if you are lazy and do not want to use the debugger to find the exact right context. You can now test things out on the object as if you were in the right context.
+<img src="../content/images/2015/01/Screen-Shot-2015-01-03-at-6-23-57-PM.png" alt="">
+<img src="../content/images/2015/01/Screen-Shot-2015-01-03-at-6-24-06-PM.png" alt="">
+<img src="../content/images/2015/01/Screen-Shot-2015-01-03-at-6-24-26-PM.png" alt="">
+<img src="../content/images/2015/01/Screen-Shot-2015-01-03-at-6-25-25-PM.png" alt=""></p>
+
+<p><a href="https://developer.chrome.com/devtools/docs/commandline-api">Like before, google has the best documentation for using these.</a></p>
+
+<p>Bonus:</p>
+
+<p>css + console.log - By using %c you can add css to your console.logs. It would look something like this console.log('%cHere is my Message', 'color: red;') <br>
+<img src="../content/images/2015/01/Screen-Shot-2015-01-03-at-6-30-24-PM.png" alt=""></p>
+
+<p>Tables in css - There is a console.table method. Put your table within a hash like json. console.table({1: {"header" : "contents"}}) <br>
+<img src="../content/images/2015/01/Screen-Shot-2015-01-03-at-6-44-47-PM.png" alt=""></p>
+        </section>
+
+        <footer class="post-footer">
+
+
+
+            <section class="author">
+                <h4><a href="../author/eric/">Eric Kennedy</a></h4>
+
+                    <p>Read <a href="../author/eric/">more posts</a> by this author.</p>
+                <div class="author-meta">
+                    
+                    
+                </div>
+            </section>
+
+
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="https://twitter.com/share?text=console.log(%22what's%20up%20with%20the%20console%3F%22)&amp;url=http://localhost:2368/console-logwhats-up-with-the-console/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:2368/console-logwhats-up-with-the-console/" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://localhost:2368/console-logwhats-up-with-the-console/" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+
+        </footer>
+
+    </article>
+
+</main>
+
+
+
+    <footer class="site-footer clearfix">
+         <section class="copyright"><a href="http://localhost:2368">standing on the shoulders of giants</a> © 2015</section>
+         <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
+    </footer>
+
+    <script src="../public/jquery.js?v=bc24e8ab80"></script>
+
+    <script type="text/javascript" src="../assets/js/jquery.fitvids.js?v=bc24e8ab80"></script>
+    <script type="text/javascript" src="../assets/js/index.js?v=bc24e8ab80"></script>
+
+</body>

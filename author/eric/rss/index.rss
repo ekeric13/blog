@@ -1,0 +1,141 @@
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Eric Kennedy - standing on the shoulders of giants</title><description>Thoughts, stories and ideas.</description><link>http://localhost:2368/</link><generator>Ghost 0.5</generator><lastBuildDate>Mon, 09 Feb 2015 23:20:04 GMT</lastBuildDate><atom:link href="http://localhost:2368/author/eric/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>How to get started on a project</title><description>&lt;p&gt;Here is a breakdown of how I got started on my latest project with my teammates:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Get to know your teammates.  &lt;/li&gt;
+&lt;li&gt;Talking about learning goals.  &lt;/li&gt;
+&lt;li&gt;Decide on the semblance of an idea.  &lt;/li&gt;
+&lt;li&gt;Define roles such as scrum master, product owner, etc.  &lt;/li&gt;
+&lt;li&gt;Create repo through your personal github or create a &lt;a href="https://help.github.com/articles/creating-a-new-organization-from-scratch/"&gt;github organization&lt;/a&gt; and make the repo. Set up &lt;a href="https://waffle.io/"&gt;waffle.io&lt;/a&gt; for that repo.  &lt;/li&gt;
+&lt;li&gt;Create a press release as you imagine the product (to get an idea of end goal).  &lt;/li&gt;
+&lt;li&gt;Create a style guide that you and your teammates will use.  &lt;/li&gt;
+&lt;li&gt;Create a contributing guide that explains to other devs how to contribute and establishes git workflow between you and your teammates.  &lt;/li&gt;
+&lt;li&gt;Talk about and decide on tech stack and what other technologies you plan on using such as task runners/frontend css mixins.  &lt;/li&gt;
+&lt;li&gt;Talk about and decide on what platform to deploy on.  &lt;/li&gt;
+&lt;li&gt;Create user stories.  &lt;/li&gt;
+&lt;li&gt;Decide on a basic schema design for the database.  &lt;/li&gt;
+&lt;li&gt;Build out app skeleton. (1. package.json 2. bower.json 3. gulpfile 4. app.js (entry point) 5. Procifle or other deployment file 6. gitignore 7. test directory 8. server directory 9. client directory)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;From here you should be at a point where you can start hacking at your new project!&lt;/p&gt;</description><link>http://localhost:2368/how-to-get-started-on-a-project/</link><guid isPermaLink="false">cdb6d1ea-1e23-46a7-a219-3ce43e11154e</guid><dc:creator>Eric Kennedy</dc:creator><pubDate>Sun, 25 Jan 2015 00:14:02 GMT</pubDate></item><item><title>console.log("what's up with the console?")</title><description>&lt;p&gt;Almost all intro to javascript tutorials have you starting off with console.log("something"). &lt;br&gt;
+&lt;img src="http://localhost:2368/content/images/2015/01/Screen-Shot-2015-01-03-at-5-45-00-PM.png" alt="From Eloquent Javascript Ch. 1"&gt;
+Eloquent Javascript, Codecademy, Codeschool, they usually begin with you writing a function that console.log's something. And why not? Console.log helps the user see output, which is essential for grasping the inner workings of a new concept. &lt;/p&gt;
+
+&lt;p&gt;The problem I have is that tutorials explain what functions are, explain what primitives are, explain what data structures are, explain every part of the script except console.log. Eventually console.log just becomes this magical thing that outputs numbers and the beginner programmers use without thinking about what it is actually doing.&lt;/p&gt;
+
+&lt;p&gt;"console" is actually an object that gives you access to the browser and let's you interact with it. Just like window is a global object, console is also a global object. &lt;a href="https://developer.mozilla.org/en-US/docs/Web/API/Console"&gt;Here is the console api reference from mozilla&lt;/a&gt; and &lt;a href="https://developer.chrome.com/devtools/docs/console-api"&gt;here is the one from google&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Go ahead and &lt;strong&gt;open your console browser by pressing command+option+j&lt;/strong&gt; if you are using a mac. Now type in console. If you look under &lt;em&gt;_ proto _&lt;/em&gt; of the console and then the &lt;em&gt;_ proto _&lt;/em&gt; of the console base you can see all the methods console has. &lt;br&gt;
+&lt;img src="http://localhost:2368/content/images/2015/01/Screen-Shot-2015-01-03-at-5-40-15-PM.png" alt="console methods"&gt;&lt;/p&gt;
+
+&lt;p&gt;The three main uses of the browser console are: &lt;br&gt;
+1. A place to get diagnostic information about the website by having the app console.log information. This is great for debugging. &lt;br&gt;
+2. &lt;a href="https://developer.chrome.com/devtools/docs/commandline-api"&gt;A command line prompt to interact with the DOM.&lt;/a&gt; This is great for doing front-end work as you do not have to go back between your app and your browser to see if certain jquery selections work. &lt;br&gt;
+3. A general sandbox to play with javascript. Rather than having to run a whole script to test if a function works you can run it in the console.&lt;/p&gt;
+
+&lt;p&gt;Here are some of the most popular console methods: &lt;br&gt;
+&lt;a href="https://developer.mozilla.org/en-US/docs/Web/API/Console.log"&gt;console.log&lt;/a&gt; - outputs a message to the browser console
+&lt;a href="https://developer.mozilla.org/en-US/docs/Web/API/Console.dir"&gt;console.dir&lt;/a&gt; - A more powerful console.log. log prints out a tree with information about its contents some of the time, the other time it prints out a string of its contents. dir always gives a tree with all the information about its contents. 
+&lt;img src="http://localhost:2368/content/images/2015/01/Screen-Shot-2015-01-03-at-5-54-35-PM.png" alt="log vs dir"&gt;
+The downside is that dir prints out a json like object as opposed to a html like object. &lt;br&gt;
+&lt;img src="http://localhost:2368/content/images/2015/01/Screen-Shot-2015-01-03-at-5-57-27-PM.png" alt="for dom use log"&gt;
+&lt;a href="https://developer.mozilla.org/en-US/docs/Web/API/Console.assert"&gt;console.assert&lt;/a&gt; - Test assertions in your code that print to the console if they fail. Great for testing. console.assert(test, "error message").
+&lt;img src="http://localhost:2368/content/images/2015/01/Screen-Shot-2015-01-03-at-6-03-06-PM.png" alt="$$() selects all of selector"&gt;
+console.clear() - Clears console. &lt;br&gt;
+console.time and console.timeEnd - These act as a timer to keep track on how long it takes something to run. Put console.time("message") in front of a function and then after the function put console.timeEnd("message"). It prints out in the console how long it took your script to run what was inbetween the timers. &lt;br&gt;
+&lt;img src="http://localhost:2368/content/images/2015/01/Screen-Shot-2015-01-03-at-6-05-39-PM.png" alt=""&gt;
+console.trace - prints a stack trace from where in the script console.trace() is called.&lt;/p&gt;
+
+&lt;p&gt;To see examples of console methods and to get a better understanding I feel that google has the best documentation. &lt;a href="https://developer.chrome.com/devtools/docs/console-api"&gt;Here is a link&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Here are somee shortcuts for interacting with the dom: &lt;br&gt;
+$() - Like jquery put a css selector within $(".class") to select it.
+&lt;img src="http://localhost:2368/content/images/2015/01/Screen-Shot-2015-01-03-at-6-16-23-PM.png" alt=""&gt;
+Sometimes google's command line api will fail to load. &lt;br&gt;
+&lt;img src="http://localhost:2368/content/images/2015/01/Screen-Shot-2015-01-03-at-6-19-37-PM.png" alt=""&gt;
+If this happens you have to use the old school way of selecting things with document.querySelector. &lt;br&gt;
+&lt;img src="http://localhost:2368/content/images/2015/01/Screen-Shot-2015-01-03-at-6-19-03-PM.png" alt=""&gt;
+$$() - Selects all elements with the css selector. It would just look like $$(".class")
+&lt;img src="http://localhost:2368/content/images/2015/01/Screen-Shot-2015-01-03-at-6-07-31-PM.png" alt=""&gt;
+$0 - If you click an html tag in the elements tab, and then put $0 in your console, $0 will select the latest image you clicked.
+&lt;img src="http://localhost:2368/content/images/2015/01/Screen-Shot-2015-01-03-at-6-28-23-PM.png" alt=""&gt;
+&lt;img src="http://localhost:2368/content/images/2015/01/Screen-Shot-2015-01-03-at-6-27-46-PM.png" alt=""&gt;
+&lt;strong&gt;console.log trick&lt;/strong&gt; - When you console.log an object in your code, right click it in the console, select store as global object, and now you can reference it in your console without having to console.log it. Great for if you are lazy and do not want to use the debugger to find the exact right context. You can now test things out on the object as if you were in the right context.
+&lt;img src="http://localhost:2368/content/images/2015/01/Screen-Shot-2015-01-03-at-6-23-57-PM.png" alt=""&gt;
+&lt;img src="http://localhost:2368/content/images/2015/01/Screen-Shot-2015-01-03-at-6-24-06-PM.png" alt=""&gt;
+&lt;img src="http://localhost:2368/content/images/2015/01/Screen-Shot-2015-01-03-at-6-24-26-PM.png" alt=""&gt;
+&lt;img src="http://localhost:2368/content/images/2015/01/Screen-Shot-2015-01-03-at-6-25-25-PM.png" alt=""&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://developer.chrome.com/devtools/docs/commandline-api"&gt;Like before, google has the best documentation for using these.&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Bonus:&lt;/p&gt;
+
+&lt;p&gt;css + console.log - By using %c you can add css to your console.logs. It would look something like this console.log('%cHere is my Message', 'color: red;') &lt;br&gt;
+&lt;img src="http://localhost:2368/content/images/2015/01/Screen-Shot-2015-01-03-at-6-30-24-PM.png" alt=""&gt;&lt;/p&gt;
+
+&lt;p&gt;Tables in css - There is a console.table method. Put your table within a hash like json. console.table({1: {"header" : "contents"}}) &lt;br&gt;
+&lt;img src="http://localhost:2368/content/images/2015/01/Screen-Shot-2015-01-03-at-6-44-47-PM.png" alt=""&gt;&lt;/p&gt;</description><link>http://localhost:2368/console-logwhats-up-with-the-console/</link><guid isPermaLink="false">1c421851-0903-4f2c-b9ca-ba98b26c2ff0</guid><dc:creator>Eric Kennedy</dc:creator><pubDate>Fri, 19 Dec 2014 05:34:45 GMT</pubDate></item><item><title>Welcome to Ghost</title><description>&lt;p&gt;You're live! Nice. We've put together a little post to introduce you to the Ghost editor and get you started. You can manage your content by signing in to the admin area at &lt;code&gt;&amp;lt;your blog URL&amp;gt;/ghost/&lt;/code&gt;. When you arrive, you can select this post from a list on the left and see a preview of it on the right. Click the little pencil icon at the top of the preview to edit this post and read the next section!&lt;/p&gt;
+
+&lt;h2 id="gettingstarted"&gt;Getting Started&lt;/h2&gt;
+
+&lt;p&gt;Ghost uses something called Markdown for writing. Essentially, it's a shorthand way to manage your post formatting as you write!&lt;/p&gt;
+
+&lt;p&gt;Writing in Markdown is really easy. In the left hand panel of Ghost, you simply write as you normally would. Where appropriate, you can use &lt;em&gt;shortcuts&lt;/em&gt; to &lt;strong&gt;style&lt;/strong&gt; your content. For example, a list:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Item number one&lt;/li&gt;
+&lt;li&gt;Item number two
+&lt;ul&gt;&lt;li&gt;A nested item&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;A final item&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;or with numbers!&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Remember to buy some milk  &lt;/li&gt;
+&lt;li&gt;Drink the milk  &lt;/li&gt;
+&lt;li&gt;Tweet that I remembered to buy the milk, and drank it&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id="links"&gt;Links&lt;/h3&gt;
+
+&lt;p&gt;Want to link to a source? No problem. If you paste in a URL, like &lt;a href="http://ghost.org/"&gt;http://ghost.org&lt;/a&gt; - it'll automatically be linked up. But if you want to customise your anchor text, you can do that too! Here's a link to &lt;a href="http://ghost.org/"&gt;the Ghost website&lt;/a&gt;. Neat.&lt;/p&gt;
+
+&lt;h3 id="whataboutimages"&gt;What about Images?&lt;/h3&gt;
+
+&lt;p&gt;Images work too! Already know the URL of the image you want to include in your article? Simply paste it in like this to make it show up:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="https://ghost.org/images/ghost.png" alt="The Ghost Logo"&gt;&lt;/p&gt;
+
+&lt;p&gt;Not sure which image you want to use yet? That's ok too. Leave yourself a descriptive placeholder and keep writing. Come back later and drag and drop the image in to upload:&lt;/p&gt;
+
+&lt;h3 id="quoting"&gt;Quoting&lt;/h3&gt;
+
+&lt;p&gt;Sometimes a link isn't enough, you want to quote someone on what they've said. It was probably very wisdomous. Is wisdomous a word? Find out in a future release when we introduce spellcheck! For now - it's definitely a word.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Wisdomous - it's definitely a word.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id="workingwithcode"&gt;Working with Code&lt;/h3&gt;
+
+&lt;p&gt;Got a streak of geek? We've got you covered there, too. You can write inline &lt;code&gt;&amp;lt;code&amp;gt;&lt;/code&gt; blocks really easily with back ticks. Want to show off something more comprehensive? 4 spaces of indentation gets you there.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;.awesome-thing {
+    display: block;
+    width: 100%;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id="readyforabreak"&gt;Ready for a Break?&lt;/h3&gt;
+
+&lt;p&gt;Throw 3 or more dashes down on any new line and you've got yourself a fancy new divider. Aw yeah.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id="advancedusage"&gt;Advanced Usage&lt;/h3&gt;
+
+&lt;p&gt;There's one fantastic secret about Markdown. If you want, you can write plain old HTML and it'll still work! Very flexible.&lt;/p&gt;
+
+&lt;p&gt;&lt;input type="text" placeholder="I'm an input field!"&gt;&lt;/p&gt;
+
+&lt;p&gt;That should be enough to get you started. Have fun - and let us know what you think :)&lt;/p&gt;</description><link>http://localhost:2368/welcome-to-ghost/</link><guid isPermaLink="false">0b831066-a303-4880-924f-75489e1accda</guid><category>Getting Started</category><dc:creator>Eric Kennedy</dc:creator><pubDate>Fri, 19 Dec 2014 03:21:30 GMT</pubDate></item></channel></rss>
