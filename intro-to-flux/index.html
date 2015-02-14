@@ -1,0 +1,166 @@
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Intro to Flux</title>
+    <meta name="description" content="">
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="../favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=44677a5780">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic%7COpen+Sans:700,400">
+
+    <link rel="canonical" href="http://localhost:2368/intro-to-flux/">
+    
+    <meta property="og:site_name" content="standing on the shoulders of giants">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Intro to Flux">
+    <meta property="og:description" content="There are many good react tutorials out there. The best intro one being probably Facebook's own Thinking in React. Here are a whole slew of react tutorials on github. Facebook makes the react tutorials very accessible.  Unfortunately when you go...">
+    <meta property="og:url" content="http://localhost:2368/intro-to-flux/">
+    <meta property="article:published_time" content="2015-02-14T22:21:49.212Z">
+    <meta property="article:modified_time" content="2015-02-14T22:21:49.210Z">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Intro to Flux">
+    <meta name="twitter:description" content="There are many good react tutorials out there. The best intro one being probably Facebook's own Thinking in React. Here are a whole slew of react tutorials on github. Facebook makes the react tutorials very accessible.  Unfortunately when you go...">
+    <meta name="twitter:url" content="http://localhost:2368/intro-to-flux/">
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "standing on the shoulders of giants",
+    "author": {
+        "@type": "Person",
+        "name": "Eric Kennedy",
+        "url": "http://localhost:2368/author/eric",
+        "sameAs": null
+    },
+    "headline": "Intro to Flux",
+    "url": "http://localhost:2368/intro-to-flux/",
+    "datePublished": "2015-02-14T22:21:49.212Z",
+    "dateModified": "2015-02-14T22:21:49.210Z",
+    "description": "There are many good react tutorials out there. The best intro one being probably Facebook&#x27;s own Thinking in React. Here are a whole slew of react tutorials on github. Facebook makes the react tutorials very accessible.  Unfortunately when you go..."
+}
+    </script>
+
+    <meta name="generator" content="Ghost 0.5">
+    <link rel="alternate" type="application/rss+xml" title="standing on the shoulders of giants" href="http://localhost:2368/rss/">
+</head>
+<body class="post-template">
+
+    
+
+
+<header class="main-header post-head no-cover">
+    <nav class="main-nav  clearfix">
+        <a class="back-button icon-arrow-left" href="http://localhost:2368">Home</a>
+        <a class="subscribe-button icon-feed" href="http://localhost:2368/rss/">Subscribe</a>
+    </nav>
+</header>
+
+<main class="content" role="main">
+
+    <article class="post">
+
+        <header class="post-header">
+            <h1 class="post-title">Intro to Flux</h1>
+            <section class="post-meta">
+                <time class="post-date" datetime="2015-02-14">14 February 2015</time> 
+            </section>
+        </header>
+
+        <section class="post-content">
+            <p>There are many good react tutorials out there. The best intro one being probably Facebook's own <a href="http://facebook.github.io/react/blog/2013/11/05/thinking-in-react.html">Thinking in React</a>. <a href="https://github.com/enaqx/awesome-react">Here are a whole slew of react tutorials on github</a>. Facebook makes the react tutorials very accessible. </p>
+
+<p>Unfortunately when you go to Flux's <a href="https://facebook.github.io/flux/">main page</a> you are presented with a vague 40 minute video that is filmed in the middle of a conference presentation. </p>
+
+<p><a href="https://github.com/facebook/flux">The github page for flux</a> isn't much better, as the first thing they present is this high level diagram that doesn't make sense without context since Flux eschews the traditional MVC paradigm in favor of a more logic in views and event based framework. Take a look at the diagram yourself: 
+<img src="../content/images/2015/02/Screen-Shot-2015-02-14-at-1-50-18-PM.png" alt="flux-diagram"></p>
+
+<p>If anything it is overwhelming since you don't understand what half those words mean. So I am going to try to break down Flux in an easier way to understand.</p>
+
+<p>SKIP TO HERE TO AVOID INTRO:</p>
+
+<p>I will use Flux MVC example as a guide so you can look at code. <br>
+Lets say you are in a react componenet building out a view. Now let's say a user clicks on something that would either change that react component/view or bring you to a whole new one. You would then want to emit an <strong>action</strong> as we can see <a href="https://github.com/facebook/flux/blob/master/examples/flux-todomvc/js/components/Header.react.js">on line 26, and 38-45</a> <br>
+<img src="../content/images/2015/02/Screen-Shot-2015-02-14-at-2-03-29-PM.png" alt="">
+Note: if you look <a href="https://github.com/facebook/flux/blob/master/examples/flux-todomvc/js/components/Header.react.js">on line 11</a> you can see the action is required. <a href="http://browserify.org/">Use Browserify</a> and <a href="https://github.com/andreypopp/reactify">Reactify</a> to allow requiring files on the client side in React.</p>
+
+<p><a href="https://github.com/facebook/flux/blob/master/examples/flux-todomvc/js/actions/TodoActions.js">Actions use the <strong>Dispatcher</strong> to emit that event</a>.
+<img src="../content/images/2015/02/Screen-Shot-2015-02-14-at-2-08-15-PM.png" alt="">
+On line 22 we see a constant. <strong>Constants</strong> are just are not mentioned as an essential part of Flux but I see them in many Flux archetictures. <a href="https://github.com/facebook/flux/blob/master/examples/flux-todomvc/js/constants/TodoConstants.js">They just specify the actionType.</a> <br>
+<img src="../content/images/2015/02/Screen-Shot-2015-02-14-at-2-11-19-PM.png" alt=""></p>
+
+<p><a href="https://github.com/facebook/flux/blob/master/examples/flux-todomvc/js/dispatcher/AppDispatcher.js">The app dispatcher itself is just an event emitter.</a> As you can see we do get it straight from Facebook's Flux.</p>
+
+<p><img src="../content/images/2015/02/Screen-Shot-2015-02-14-at-2-12-42-PM.png" alt=""></p>
+
+<p>The main part of the dispatcher is actually within the store that you plan to utilizer, <a href="https://github.com/facebook/flux/blob/master/examples/flux-todomvc/js/stores/TodoStore.js">usually at the bottom of the file.</a></p>
+
+<p><img src="../content/images/2015/02/Screen-Shot-2015-02-14-at-2-15-50-PM.png" alt=""></p>
+
+<p>Here we listen for the action and then invoke the callback function that is within the store.</p>
+
+<p><a href="https://github.com/facebook/flux/blob/master/examples/flux-todomvc/js/stores/TodoStore.js">The store handles the callback function as we can see on line 102.</a></p>
+
+<p><img src="../content/images/2015/02/Screen-Shot-2015-02-14-at-2-17-34-PM.png" alt=""></p>
+
+<p>Often the store will handle the data that the view relies on and changes depending on it. It is a store of functions that modify data.</p>
+
+<p>So to summarize: We do something in the view, fire an action, the dispatcher listens for the action and invokes the corresponding registered the callback, function and the store runs the callback function, changing what is in the view.</p>
+
+<p>For the record, the best intro flux tutorials I have read are <a href="https://scotch.io/tutorials/getting-to-know-flux-the-react-js-architecture">scotch's</a> and one called <a href="http://blog.andrewray.me/flux-for-stupid-people/">Flux for stupid people</a>.</p>
+        </section>
+
+        <footer class="post-footer">
+
+
+
+            <section class="author">
+                <h4><a href="../author/eric/">Eric Kennedy</a></h4>
+
+                    <p>Read <a href="../author/eric/">more posts</a> by this author.</p>
+                <div class="author-meta">
+                    
+                    
+                </div>
+            </section>
+
+
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="https://twitter.com/share?text=Intro%20to%20Flux&amp;url=http://localhost:2368/intro-to-flux/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:2368/intro-to-flux/" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://localhost:2368/intro-to-flux/" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+
+        </footer>
+
+    </article>
+
+</main>
+
+
+
+    <footer class="site-footer clearfix">
+         <section class="copyright"><a href="http://localhost:2368">standing on the shoulders of giants</a> © 2015</section>
+         <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
+    </footer>
+
+    <script src="../public/jquery.js?v=44677a5780"></script>
+
+    <script type="text/javascript" src="../assets/js/jquery.fitvids.js?v=44677a5780"></script>
+    <script type="text/javascript" src="../assets/js/index.js?v=44677a5780"></script>
+
+</body>

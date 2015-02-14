@@ -1,4 +1,43 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Eric Kennedy - standing on the shoulders of giants</title><description>Thoughts, stories and ideas.</description><link>http://localhost:2368/</link><generator>Ghost 0.5</generator><lastBuildDate>Mon, 09 Feb 2015 23:20:04 GMT</lastBuildDate><atom:link href="http://localhost:2368/author/eric/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>How to get started on a project</title><description>&lt;p&gt;Here is a breakdown of how I got started on my latest project with my teammates:&lt;/p&gt;
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Eric Kennedy - standing on the shoulders of giants</title><description>Thoughts, stories and ideas.</description><link>http://localhost:2368/</link><generator>Ghost 0.5</generator><lastBuildDate>Sat, 14 Feb 2015 22:24:24 GMT</lastBuildDate><atom:link href="http://localhost:2368/author/eric/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Intro to Flux</title><description>&lt;p&gt;There are many good react tutorials out there. The best intro one being probably Facebook's own &lt;a href="http://facebook.github.io/react/blog/2013/11/05/thinking-in-react.html"&gt;Thinking in React&lt;/a&gt;. &lt;a href="https://github.com/enaqx/awesome-react"&gt;Here are a whole slew of react tutorials on github&lt;/a&gt;. Facebook makes the react tutorials very accessible. &lt;/p&gt;
+
+&lt;p&gt;Unfortunately when you go to Flux's &lt;a href="https://facebook.github.io/flux/"&gt;main page&lt;/a&gt; you are presented with a vague 40 minute video that is filmed in the middle of a conference presentation. &lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://github.com/facebook/flux"&gt;The github page for flux&lt;/a&gt; isn't much better, as the first thing they present is this high level diagram that doesn't make sense without context since Flux eschews the traditional MVC paradigm in favor of a more logic in views and event based framework. Take a look at the diagram yourself: 
+&lt;img src="http://localhost:2368/content/images/2015/02/Screen-Shot-2015-02-14-at-1-50-18-PM.png" alt="flux-diagram"&gt;&lt;/p&gt;
+
+&lt;p&gt;If anything it is overwhelming since you don't understand what half those words mean. So I am going to try to break down Flux in an easier way to understand.&lt;/p&gt;
+
+&lt;p&gt;SKIP TO HERE TO AVOID INTRO:&lt;/p&gt;
+
+&lt;p&gt;I will use Flux MVC example as a guide so you can look at code. &lt;br&gt;
+Lets say you are in a react componenet building out a view. Now let's say a user clicks on something that would either change that react component/view or bring you to a whole new one. You would then want to emit an &lt;strong&gt;action&lt;/strong&gt; as we can see &lt;a href="https://github.com/facebook/flux/blob/master/examples/flux-todomvc/js/components/Header.react.js"&gt;on line 26, and 38-45&lt;/a&gt; &lt;br&gt;
+&lt;img src="http://localhost:2368/content/images/2015/02/Screen-Shot-2015-02-14-at-2-03-29-PM.png" alt=""&gt;
+Note: if you look &lt;a href="https://github.com/facebook/flux/blob/master/examples/flux-todomvc/js/components/Header.react.js"&gt;on line 11&lt;/a&gt; you can see the action is required. &lt;a href="http://browserify.org/"&gt;Use Browserify&lt;/a&gt; and &lt;a href="https://github.com/andreypopp/reactify"&gt;Reactify&lt;/a&gt; to allow requiring files on the client side in React.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://github.com/facebook/flux/blob/master/examples/flux-todomvc/js/actions/TodoActions.js"&gt;Actions use the &lt;strong&gt;Dispatcher&lt;/strong&gt; to emit that event&lt;/a&gt;.
+&lt;img src="http://localhost:2368/content/images/2015/02/Screen-Shot-2015-02-14-at-2-08-15-PM.png" alt=""&gt;
+On line 22 we see a constant. &lt;strong&gt;Constants&lt;/strong&gt; are just are not mentioned as an essential part of Flux but I see them in many Flux archetictures. &lt;a href="https://github.com/facebook/flux/blob/master/examples/flux-todomvc/js/constants/TodoConstants.js"&gt;They just specify the actionType.&lt;/a&gt; &lt;br&gt;
+&lt;img src="http://localhost:2368/content/images/2015/02/Screen-Shot-2015-02-14-at-2-11-19-PM.png" alt=""&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://github.com/facebook/flux/blob/master/examples/flux-todomvc/js/dispatcher/AppDispatcher.js"&gt;The app dispatcher itself is just an event emitter.&lt;/a&gt; As you can see we do get it straight from Facebook's Flux.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://localhost:2368/content/images/2015/02/Screen-Shot-2015-02-14-at-2-12-42-PM.png" alt=""&gt;&lt;/p&gt;
+
+&lt;p&gt;The main part of the dispatcher is actually within the store that you plan to utilizer, &lt;a href="https://github.com/facebook/flux/blob/master/examples/flux-todomvc/js/stores/TodoStore.js"&gt;usually at the bottom of the file.&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://localhost:2368/content/images/2015/02/Screen-Shot-2015-02-14-at-2-15-50-PM.png" alt=""&gt;&lt;/p&gt;
+
+&lt;p&gt;Here we listen for the action and then invoke the callback function that is within the store.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://github.com/facebook/flux/blob/master/examples/flux-todomvc/js/stores/TodoStore.js"&gt;The store handles the callback function as we can see on line 102.&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://localhost:2368/content/images/2015/02/Screen-Shot-2015-02-14-at-2-17-34-PM.png" alt=""&gt;&lt;/p&gt;
+
+&lt;p&gt;Often the store will handle the data that the view relies on and changes depending on it. It is a store of functions that modify data.&lt;/p&gt;
+
+&lt;p&gt;So to summarize: We do something in the view, fire an action, the dispatcher listens for the action and invokes the corresponding registered the callback, function and the store runs the callback function, changing what is in the view.&lt;/p&gt;
+
+&lt;p&gt;For the record, the best intro flux tutorials I have read are &lt;a href="https://scotch.io/tutorials/getting-to-know-flux-the-react-js-architecture"&gt;scotch's&lt;/a&gt; and one called &lt;a href="http://blog.andrewray.me/flux-for-stupid-people/"&gt;Flux for stupid people&lt;/a&gt;.&lt;/p&gt;</description><link>http://localhost:2368/intro-to-flux/</link><guid isPermaLink="false">0deae0dd-74e6-4794-b2d9-065681186446</guid><dc:creator>Eric Kennedy</dc:creator><pubDate>Sat, 14 Feb 2015 22:21:49 GMT</pubDate></item><item><title>How to get started on a project</title><description>&lt;p&gt;Here is a breakdown of how I got started on my latest project with my teammates:&lt;/p&gt;
 
 &lt;ol&gt;
 &lt;li&gt;Get to know your teammates.  &lt;/li&gt;
